@@ -1,3 +1,7 @@
+# About App
+Social media contacts app
+To view the Twitter user's name, surname, link, and avatar by registering the url.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
