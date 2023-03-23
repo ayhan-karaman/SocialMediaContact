@@ -6,6 +6,10 @@ import {
   
 export default function CreateContact() {
   return (
+
+    <>
+      <h1 style={{padding:40, color:'firebrick'}}>New Contact</h1>
+  
     <Form method="post" id="contact-form">
       <p>
         <span>Name</span>
@@ -31,6 +35,14 @@ export default function CreateContact() {
         />
       </label>
       <label>
+        <span>Instagram</span>
+        <input
+          type="text"
+          name="instagram"
+          placeholder="jack"
+        />
+      </label>
+      <label>
         <span>Avatar URL</span>
         <input
           placeholder="https://example.com/avatar.jpg"
@@ -51,6 +63,8 @@ export default function CreateContact() {
         <button type="button">Cancel</button>
       </p>
     </Form>
+    
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import {NavLink, Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import { getContacts } from "../../contacts";
+import HomeContext from "./homeContext";
 
 export default function HomeContact() {
     const {contacts} = useLoaderData();
@@ -7,6 +8,9 @@ export default function HomeContact() {
     return (
       <>
         <div id="sidebar">
+        <form className="new-contact" action="/contacts/create">
+              <button type="submit">New Contact</button>
+         </form>
           <h1>React Router Contacts</h1>
           <div>
             <form id="search-form" role="search">
@@ -27,9 +31,7 @@ export default function HomeContact() {
                 aria-live="polite"
               ></div>
             </form>
-            <form action="/contacts/create">
-              <button type="submit">New</button>
-            </form>
+            
           </div>
           <nav>
             {contacts.length ? (
@@ -70,7 +72,8 @@ export default function HomeContact() {
           navigation.state === "loading" ? "loading" : ""
         }
         >
-            <Outlet/>
+           { window.location.pathname === '/' ? <HomeContext/>   : <Outlet/>}
+           
         </div>
       </>
     );

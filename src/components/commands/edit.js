@@ -7,6 +7,8 @@ export default function EditContact() {
   const {contact} = useLoaderData();
 
   return (
+    <>
+     <h1 style={{padding:40, color:'firebrick'}}>Edit Contact</h1>
     <Form method="post" id="contact-form">
       <p>
         <span>Name</span>
@@ -35,6 +37,15 @@ export default function EditContact() {
         />
       </label>
       <label>
+        <span>Instagram</span>
+        <input
+          type="text"
+          name="instagram"
+          placeholder="jack"
+          defaultValue={contact.instagram}
+        />
+      </label>
+      <label>
         <span>Avatar URL</span>
         <input
           placeholder="https://example.com/avatar.jpg"
@@ -57,6 +68,7 @@ export default function EditContact() {
         <button type="button">Cancel</button>
       </p>
     </Form>
+  </>
   );
 }
 

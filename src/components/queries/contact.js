@@ -1,6 +1,7 @@
 import { Form, useLoaderData } from "react-router-dom";
 import { getContact } from "../../contacts";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faInstagramSquare, faSquareFacebook, faTwitterSquare } from '@fortawesome/free-brands-svg-icons' 
 
 
 export default function Contact() {
@@ -26,17 +27,45 @@ export default function Contact() {
           <Favorite contact={contact} />
         </h1>
 
+        <div style={{display:'flex',  justifyContent:'flex-start !important', alignItems:"center", padding:0 }}>
+
+          
         {contact.twitter && (
-          <p>
+          <p >
             <a
+              style={{fontSize:40}}
               target="_blank"
               href={`https://twitter.com/${contact.twitter}`}
             >
-              {contact.twitter}
+              <FontAwesomeIcon icon={faTwitterSquare}/>
             </a>
           </p>
         )}
-
+            {contact.facebook && (
+              <p style={{padding:0}}>
+                <a
+                  style={{fontSize:40}}
+                  target="_blank"
+                  href={`https://twitter.com/${contact.twitter}`}
+                >
+                  <FontAwesomeIcon icon={faSquareFacebook}/>
+                </a>
+              </p>
+            )}
+            {contact.instagram && (
+          <p >
+            <a
+              style={{color:'#E1306C',fontSize:40} }
+              target="_blank"
+              href={`https://www.instagram.com/${contact.instagram}`}
+            >
+              <FontAwesomeIcon  icon={faInstagramSquare}/>
+            </a>
+            
+          </p>
+        )}
+        </div>
+        
         {contact.notes && <p>{contact.notes}</p>}
 
         <div>
